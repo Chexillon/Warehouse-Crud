@@ -37,7 +37,7 @@ class FinishedController extends Controller
             'nama_barang' => 'required|max:20',
             'kode_barang' => 'required|max:20|unique:finished,kode_barang',
             'nama_customer' => 'required|max:20',
-            'kategori' => 'required',
+            // 'kategori' => 'required',
             'tanggal' => 'required',
             'jumlah' => 'required'
         ], [
@@ -45,7 +45,7 @@ class FinishedController extends Controller
             'kode_barang.required' => 'Kode Barang wajib diisi',
             'kode_barang.unique' => 'Kode Barang sudah ada di di dalam database',
             'nama_customer.required' => 'Nama Customer wajib diisi',
-            'kategori.required' => 'Kategori wajib diisi',
+            // 'kategori.required' => 'Kategori wajib diisi',
             'tanggal.required' => 'Tanggal wajib diisi',
             'jumlah.required' => 'Jumlah wajib diisi',
 

@@ -34,8 +34,7 @@ class MasterdataController extends Controller
             'nama_barang' => 'required|max:20',
             'kode_barang' => 'required|max:20|unique:finished,kode_barang',
             'nama_customer' => 'required|max:20',
-            'kategori' => 'required',
-
+            // 'kategori' => 'required',
             'tanggal' => 'required',
             'jumlah' => 'required'
         ], [
@@ -43,8 +42,7 @@ class MasterdataController extends Controller
             'kode_barang.required' => 'Kode Barang wajib diisi',
             'kode_barang.unique' => 'Kode Barang sudah ada di di dalam database',
             'nama_customer.required' => 'Nama Customer wajib diisi',
-            'kategori.required' => 'Kategori wajib diisi',
-
+            // 'kategori.required' => 'Kategori wajib diisi',
             'tanggal.required' => 'Tanggal wajib diisi',
             'jumlah.required' => 'Jumlah wajib diisi',
 
@@ -56,8 +54,7 @@ class MasterdataController extends Controller
             'nama_barang' => $request->nama_barang,
             'kode_barang' => $request->kode_barang,
             'nama_customer' => $request->nama_customer,
-            'kategori' => $request->kategori,
-
+            // 'kategori' => $request->kategori,
             'tanggal' => $request->tanggal,
             'jumlah' => $request->jumlah,
         ];
@@ -91,8 +88,7 @@ class MasterdataController extends Controller
             'nama_barang' => 'required|max:20',
             'kode_barang' => 'required|max:20',
             'nama_customer' => 'required|max:20',
-            'kategori' => 'required',
-
+            // 'kategori' => 'required',
             'tanggal' => 'required',
             'jumlah' => 'required'
         ], [
@@ -110,8 +106,7 @@ class MasterdataController extends Controller
             'nama_barang' => $request->nama_barang,
             'kode_barang' => $request->kode_barang,
             'nama_customer' => $request->nama_customer,
-            'kategori' => $request->kategori,
-
+            // 'kategori' => $request->kategori,
             'tanggal' => $request->tanggal,
             'jumlah' => $request->jumlah,
         ];
