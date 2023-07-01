@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama_barang');
             $table->string('nama_customer');
             $table->date('tanggal');
-            $table->timestamps();
+            $table->enum('role', [1, 2])->comment('Barang Jadi = 1, Barang Setengah Jadi = 2');            $table->timestamps();
             $table->integer('jumlah');
 
 

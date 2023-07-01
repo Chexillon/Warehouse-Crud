@@ -172,7 +172,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ url('finished/'.$data->id)}}" method="post">
+              <form action="{{ url('masterdata/'.$data->id)}}" method="post">
                 @csrf
                 @method('PUT')
                 <div class="card-body container">
@@ -203,7 +203,7 @@
                 <div class="card-footer">
                   <div class="flex-row">
                   <button  type="submit" class="btn btn-primary">Save</button>
-                  <a href="{{ url('finished') }}" class="btn btn-danger ml-3">Cancel</a>
+                  <a href="{{ url('masterdata') }}" class="btn btn-danger ml-3">Cancel</a>
                 </div>
                 </div>
               </form>

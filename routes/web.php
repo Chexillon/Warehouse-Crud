@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ChildController;
 use App\Http\Controllers\FinishedController;
+use App\Http\Controllers\MasterdataController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RawController;
 use Illuminate\Support\Facades\Route;
@@ -40,4 +41,9 @@ Route::resource('raw', RawController::class);
 
 // Routing page child part & komponen
 Route::resource('child', ChildController::class);
+
+
+
+Route::resource('masterdata', MasterdataController::class);
+
 

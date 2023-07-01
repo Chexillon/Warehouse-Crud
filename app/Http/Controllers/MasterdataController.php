@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\finished;
 use Illuminate\Http\Request;
+use App\Models\finished;
 
-class FinishedController extends Controller
+
+class MasterdataController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
-        $data = finished::orderBy('id','desc')->paginate(10);
-        return view('finished.finished')->with('data', $data);
-        //
+        $data = finished::orderBy('id', 'desc')->paginate(10);
+        return view('masterdata.masterdata')->with('data', $data);
     }
 
     /**
@@ -23,7 +22,7 @@ class FinishedController extends Controller
      */
     public function create()
     {
-        return view('finished.create');
+        return view('masterdata.create');
     }
 
     /**
@@ -31,13 +30,12 @@ class FinishedController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $request->validate([
             'nama_barang' => 'required|max:20',
             'kode_barang' => 'required|max:20|unique:finished,kode_barang',
             'nama_customer' => 'required|max:20',
             'kategori' => 'required',
+
             'tanggal' => 'required',
             'jumlah' => 'required'
         ], [
@@ -46,6 +44,7 @@ class FinishedController extends Controller
             'kode_barang.unique' => 'Kode Barang sudah ada di di dalam database',
             'nama_customer.required' => 'Nama Customer wajib diisi',
             'kategori.required' => 'Kategori wajib diisi',
+
             'tanggal.required' => 'Tanggal wajib diisi',
             'jumlah.required' => 'Jumlah wajib diisi',
 
@@ -57,13 +56,13 @@ class FinishedController extends Controller
             'nama_barang' => $request->nama_barang,
             'kode_barang' => $request->kode_barang,
             'nama_customer' => $request->nama_customer,
-            // 'kategori' => $request->kategori,
+            'kategori' => $request->kategori,
+
             'tanggal' => $request->tanggal,
             'jumlah' => $request->jumlah,
         ];
         finished::create($data);
-        return redirect()->to('finished')->with('success','Berhasil menambahkan data');
-        //
+        return redirect()->to('masterdata')->with('success', 'Berhasil menambahkan data');
     }
 
     /**
@@ -80,11 +79,8 @@ class FinishedController extends Controller
     public function edit(string $id)
     {
         $data = finished::where('id', $id)->first();
-        return view ('finished.edit')->with('data', $data);
-     
+        return view('masterdata.edit')->with('data', $data);
     }
-
-
 
     /**
      * Update the specified resource in storage.
@@ -96,13 +92,13 @@ class FinishedController extends Controller
             'kode_barang' => 'required|max:20',
             'nama_customer' => 'required|max:20',
             'kategori' => 'required',
+
             'tanggal' => 'required',
             'jumlah' => 'required'
         ], [
             'nama_barang.reqiured' => 'Nama Barang wajib diisi',
             'kode_barang.reqiured' => 'Kode Barang wajib diisi',
             'nama_customer.reqiured' => 'Nama Customer wajib diisi',
-            // 'kategori.required' => 'Kategori wajib diisi',
             'tanggal.reqiured' => 'Tanggal wajib diisi',
             'jumlah.reqiured' => 'Jumlah wajib diisi',
 
@@ -114,12 +110,13 @@ class FinishedController extends Controller
             'nama_barang' => $request->nama_barang,
             'kode_barang' => $request->kode_barang,
             'nama_customer' => $request->nama_customer,
-            // 'kategori' => $request->kategori,
+            'kategori' => $request->kategori,
+
             'tanggal' => $request->tanggal,
             'jumlah' => $request->jumlah,
         ];
         finished::where('id', $id)->update($data);
-        return redirect()->to('finished')->with('success','Berhasil melakukan update data data');
+        return redirect()->to('masterdata')->with('success', 'Berhasil melakukan update data data');
     }
 
     /**
@@ -128,6 +125,6 @@ class FinishedController extends Controller
     public function destroy(string $id)
     {
         finished::where('id', $id)->delete();
-        return redirect()->to('finished')->with('success', 'Berhasil melakukan delete data');
+        return redirect()->to('masterdata')->with('success', 'Berhasil melakukan delete data');
     }
 }

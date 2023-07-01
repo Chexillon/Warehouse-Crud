@@ -133,13 +133,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Input Barang Jadi</h1>
+            <h1>Input Master Data</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-              <li class="breadcrumb-item active">Barang Jadi</li>
-              <li class="breadcrumb-item active">Input Barang Jadi</li>
+              <li class="breadcrumb-item active">Master Data</li>
+              <li class="breadcrumb-item active">Input Barang </li>
             </ol>
           </div>
         </div>
@@ -168,7 +168,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Barang Jadi</h3>
+                <h3 class="card-title">Input Barang</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -176,16 +176,25 @@
                 @csrf
                 <div class="card-body container">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Barang</label>
+                    <label for="nama-barang">Nama Barang</label>
                     <input type="text" class="form-control" id="text" name="nama_barang" placeholder="Nama Barang" >
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Kode Barang</label>
+                    <label for="kode-barang">Kode Barang</label>
                     <input type="text" class="form-control" id="text" name="kode_barang" placeholder="Kode Barang" >
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Nama Customer</label>
+                    <label for="nama-customer">Nama Customer</label>
                     <input type="text" class="form-control" id="text" name="nama_customer" placeholder="Nama Customer" >
+                  </div>
+                  <div class="form-group">
+                    <label for="kategori">Kategori</label>
+                    <br>
+                    <select class="form-select form-select-lg mb-3" name="kategori" aria-label=".form-select-lg example">
+                      <option selected>Pilih Kategori</option>
+                      <option value="1">Barang Jadi</option>
+                      <option value="2">Barang Setengah Jadi</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Tanggal</label>

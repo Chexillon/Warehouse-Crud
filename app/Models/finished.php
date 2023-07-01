@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class finished extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama_barang', 'kode_barang', 'nama_customer','tanggal', 'jumlah'];
+    protected $fillable = ['nama_barang', 'kode_barang', 'nama_customer','kategori','tanggal', 'jumlah'];
     protected $table = 'finished';
 }
 

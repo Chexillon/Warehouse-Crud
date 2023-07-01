@@ -115,6 +115,15 @@
             </li>
 
             <li class="nav-item">
+              <a href="{{ url('masterdata') }}" class="nav-link">
+                <i class="nav-icon fas fa-solid fa-box"></i>
+                <p>
+                  Master Data
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
               <a href="{{ url('finished') }}" class="nav-link">
               <i class="nav-icon fas fa-boxes"></i>
                 <p>

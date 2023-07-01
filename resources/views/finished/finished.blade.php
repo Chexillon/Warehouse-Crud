@@ -1,5 +1,4 @@
 @extends('layout.template')
-@extends('component.pesan')
 
 @section('konten')
     
@@ -85,6 +84,15 @@
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{{ url('masterdata') }}" class="nav-link">
+                <i class="nav-icon fas fa-solid fa-box"></i>
+                <p>
+                  Master Data
                 </p>
               </a>
             </li>

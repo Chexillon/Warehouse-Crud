@@ -66,7 +66,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="{{ url('/') }}" class="brand-link">
-        <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="/ dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Warehouse</span>
       </a>
 
@@ -172,28 +172,38 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ url('masterdata')}}" method="post">
+              <form action="{{ url('masterdata/'.$data->id)}}" method="post">
                 @csrf
+                @method('PUT')
                 <div class="card-body container">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Barang</label>
-                    <input type="text" class="form-control" id="text" name="nama_barang" placeholder="Nama Barang" >
+                    <input type="text" class="form-control" id="text" name="nama_barang" value="{{ $data->nama_barang }}" placeholder="Nama Barang" >
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Kode Barang</label>
-                    <input type="text" class="form-control" id="text" name="kode_barang" placeholder="Kode Barang" >
+                    <input type="text" class="form-control" id="text" name="kode_barang" value="{{ $data->kode_barang }}" placeholder="Kode Barang" >
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Nama Customer</label>
-                    <input type="text" class="form-control" id="text" name="nama_customer" placeholder="Nama Customer" >
+                    <input type="text" class="form-control" id="text" name="nama_customer" value="{{ $data->nama_customer }}" placeholder="Nama Customer" >
+                  </div>
+                  <div class="form-group">
+                    <label for="kategori">Kategori</label>
+                    <br>
+                    <select class="form-select form-select-lg mb-3" name="kategori" aria-label=".form-select-lg example">
+                      <option selected>Pilih Kategori</option>
+                      <option value="1">Barang Jadi</option>
+                      <option value="2">Barang Setengah Jadi</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Tanggal</label>
-                    <input type="date" class="form-control" name="tanggal" id="date" >
+                    <input type="date" class="form-control" name="tanggal" value="{{ $data->tanggal }}" id="date" >
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Jumlah</label>
-                    <input type="number" class="form-control" name="jumlah" id="date" >
+                    <input type="number" class="form-control" name="jumlah" value="{{ $data->jumlah }}" id="date" >
                   </div>
         
                 </div>
@@ -201,7 +211,7 @@
 
                 <div class="card-footer">
                   <div class="flex-row">
-                  <button type="submit" class="btn btn-primary">Save</button>
+                  <button  type="submit" class="btn btn-primary">Save</button>
                   <a href="{{ url('masterdata') }}" class="btn btn-danger ml-3">Cancel</a>
                 </div>
                 </div>
@@ -214,4 +224,4 @@
 </body>
 
 </html>
-@endsection
+@endsection 
