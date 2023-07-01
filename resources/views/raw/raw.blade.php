@@ -164,9 +164,9 @@
 </div>
 @endif              
         <a href="{{ url('raw/create')}}" class="btn btn-success mt-5 mb-5 fw-bold">Tambah Data +</a>
-        <table class="table">
+        <table class="table table-light">
   <thead>
-    <tr>
+    <tr class="table-secondary">
       <th scope="col">No</th>
       <th scope="col">Nama Barang</th>
       <th scope="col">Nama Supplier</th>
