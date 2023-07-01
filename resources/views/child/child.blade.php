@@ -1,13 +1,16 @@
 @extends('layout.template')
+@extends('component.pesan')
 
 @section('konten')
     
+
+
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__shake" src="/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+      <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
     </div>
 
     <!-- Navbar -->
@@ -66,7 +69,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="{{ url('/') }}" class="brand-link">
-        <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Warehouse</span>
       </a>
 
@@ -78,7 +81,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="{{ url('/')}}" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -105,7 +108,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{ url('child') }}" class="nav-link">
+              <a href="{{ url('child') }}" class="nav-link active">
                 <i class="nav-icon fas fa-solid fa-box"></i>
                 <p>
                   Child Part & Komponen
@@ -114,7 +117,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link active">
+              <a href="{{ url('raw') }}" class="nav-link">
                 <i class="nav-icon fas fa-solid fa-box"></i>
                 <p>
                   Raw Material
@@ -127,91 +130,77 @@
       <!-- /.sidebar -->
     </aside>
 
+    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Input Raw Material</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-              <li class="breadcrumb-item active">Raw Material</li>
-              <li class="breadcrumb-item active">Input Raw Material</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 fw-bold">Child Part & Komponen</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                <li class="breadcrumb-item active">Child Part & Komponen</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
 
-    @if ($errors->any())
+
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          @if (Session::has('success'))
 <div class="pt-3">
-  <div class="alert alert-danger">
-    <ul>
-      @foreach ($errors->all() as $item)
-      <li>{{ $item }}</li>
-          
-      @endforeach
-    </ul>
+    <div class="alert alert-success">
+        {{ Session::get('success') }}
 
-  </div>
+    </div>
 </div>
-@endif
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <!-- left column -->
-          <div class="col">
-            <!-- general form elements -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Raw Material</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form action="{{ url('raw')}}" method="post">
-                @csrf
-                <div class="card-body container">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Barang</label>
-                    <input type="text" class="form-control" id="text" name="nama_barang" placeholder="Nama Barang" >
-                  </div>
-                  {{-- <div class="form-group">
-                    <label for="exampleInputPassword1">Kode Barang</label>
-                    <input type="text" class="form-control" id="text" name="kode_barang" placeholder="Kode Barang" >
-                  </div> --}}
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Nama Supplier</label>
-                    <input type="text" class="form-control" id="text" name="nama_supplier" placeholder="Nama Customer" >
-                  </div>
-                  {{-- <div class="form-group">
-                    <label for="exampleInputPassword1">Tanggal</label>
-                    <input type="date" class="form-control" name="tanggal" id="date" >
-                  </div> --}}
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Jumlah</label>
-                    <input type="number" class="form-control" name="jumlah" id="date" >
-                  </div>
-        
-                </div>
-                <!-- /.card-body -->
+@endif              
+        <a href="{{ url('child/create')}}" class="btn btn-success mt-5 mb-5 fw-bold">Tambah Data +</a>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Nama Barang</th>
+      <th scope="col">Nama Supplier</th>
+      <th scope="col">Jumlah</th>
+      <th scope="col">Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php $i = $data->firstItem() ?>
+    @foreach ($data as $item)
+    <tr>
+      <th scope="row">{{ $i }}</th>
+      <td>{{ $item->nama_barang }}</td>
+      <td>{{ $item->nama_supplier }}</td>
+      <td>{{ $item->jumlah }}</td>
+      <td>
+        <a href="{{ url('child/'.$item->id.'/edit') }}" class="btn btn-warning ion-edit"></a>
+        <form class="d-inline" action="{{ url('child/'.$item->id) }}" method="post">
+          @csrf
+          @method('DELETE')
+            <button type="submit" name="submit" class="btn btn-danger ion-android-delete"></button>
+        </form>
+      </td>
+      <?php $i++ ?>
+    @endforeach
+    </tr>
+  </tbody>
+</table>
+{{ $data->links() }}
+        </div>
+      </section>
+      
 
-                <div class="card-footer">
-                  <div class="flex-row">
-                  <button type="submit" class="btn btn-primary">Save</button>
-                  <a href="{{ url('raw') }}" class="btn btn-danger ml-3">Cancel</a>
-                </div>
-                </div>
-              </form>
-            </div>
-        <!-- ./wrapper -->
 
-     
-        
 </body>
-
 </html>
 @endsection

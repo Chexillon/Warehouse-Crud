@@ -105,7 +105,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{ url('child') }}" class="nav-link">
+              <a href="{{ url('child') }}" class="nav-link active">
                 <i class="nav-icon fas fa-solid fa-box"></i>
                 <p>
                   Child Part & Komponen
@@ -114,7 +114,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link active">
+              <a href="{{ url('raw') }}" class="nav-link">
                 <i class="nav-icon fas fa-solid fa-box"></i>
                 <p>
                   Raw Material
@@ -133,13 +133,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Input Raw Material</h1>
+            <h1>Input Child Part & Komponen</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-              <li class="breadcrumb-item active">Raw Material</li>
-              <li class="breadcrumb-item active">Input Raw Material</li>
+              <li class="breadcrumb-item active">Child Part & Komponen</li>
+              <li class="breadcrumb-item active">Input Child Part & Komponen</li>
             </ol>
           </div>
         </div>
@@ -168,11 +168,11 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Raw Material</h3>
+                <h3 class="card-title">Child Part & Komponen</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ url('raw')}}" method="post">
+              <form action="{{ url('child')}}" method="post">
                 @csrf
                 <div class="card-body container">
                   <div class="form-group">
@@ -202,7 +202,7 @@
                 <div class="card-footer">
                   <div class="flex-row">
                   <button type="submit" class="btn btn-primary">Save</button>
-                  <a href="{{ url('raw') }}" class="btn btn-danger ml-3">Cancel</a>
+                  <a href="{{ url('child') }}" class="btn btn-danger ml-3">Cancel</a>
                 </div>
                 </div>
               </form>

@@ -133,7 +133,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="{{ url('child') }}" class="nav-link">
                 <i class="nav-icon fas fa-solid fa-box"></i>
                 <p>
                   Child Part & Komponen
@@ -221,7 +221,7 @@
                 <div class="icon">
                   <i class="ion ion-gear-b"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right  "></i></a>
+                <a href="{{ url('child') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right  "></i></a>
               </div>
             </div>
             <!-- ./col -->

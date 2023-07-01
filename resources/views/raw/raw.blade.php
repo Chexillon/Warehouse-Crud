@@ -108,7 +108,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="{{ url('child') }}" class="nav-link">
                 <i class="nav-icon fas fa-solid fa-box"></i>
                 <p>
                   Child Part & Komponen

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChildController;
 use App\Http\Controllers\FinishedController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RawController;
@@ -36,4 +37,7 @@ Route::resource('finished', FinishedController::class);
 // Routing page raw material
 
 Route::resource('raw', RawController::class);
+
+// Routing page child part & komponen
+Route::resource('child', ChildController::class);
 
