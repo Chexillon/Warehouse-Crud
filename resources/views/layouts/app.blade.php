@@ -39,11 +39,9 @@
         <div class="container">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
-            @guest
             <a class="navbar-brand" href="{{ url('/home') }}">
                 Warehouse
             </a>
-            @endguest
         </ul>
   
         <!-- Right navbar links -->
@@ -82,7 +80,8 @@
         </ul>
     </div>
       </nav>
-      <!-- /.navbar -->
+
+      @yield('dashboardNav')
   
       @yield('content')
   

@@ -1,7 +1,7 @@
-@extends('layout.template')
+@extends('layouts.app')
 @extends('component.pesan')
 
-@section('konten')
+@section('content')
     
 
 
@@ -66,78 +66,7 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-      <!-- Brand Logo -->
-      <a href="{{ url('/') }}" class="brand-link">
-        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Warehouse</span>
-      </a>
-
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-            <li class="nav-item">
-              <a href="{{ url('/')}}" class="nav-link">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                  Dashboard
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="{{ url('masterdata') }}" class="nav-link">
-                <i class="nav-icon fas fa-solid fa-box"></i>
-                <p>
-                  Master Data
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item ">
-              <a href="{{ url('finished') }}" class="nav-link">
-              <i class="nav-icon fas fa-boxes"></i>
-                <p>
-                  Barang Jadi
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-boxes"></i>
-                <p>
-                  Barang Setengah Jadi
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="{{ url('child') }}" class="nav-link">
-                <i class="nav-icon fas fa-solid fa-box"></i>
-                <p>
-                  Child Part & Komponen
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-solid fa-box"></i>
-                <p>
-                  Raw Material
-                </p>
-              </a>
-            </li>
-        </nav>
-        <!-- /.sidebar-menu -->
-      </div>
-      <!-- /.sidebar -->
-    </aside>
+    @extends('dashboardNav')
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
