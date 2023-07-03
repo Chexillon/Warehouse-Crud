@@ -14,7 +14,14 @@ class RawController extends Controller
     {
         
         $data = raw::orderBy('id','desc')->paginate(10);
-        return view('raw.raw')->with('data', $data);
+        return view('raw.incoming')->with('data', $data);
+    }
+
+    public function outgoing()
+    {
+        
+        $data = raw::orderBy('id','desc')->paginate(10);
+        return view('raw.outgoing')->with('data', $data);
     }
 
     /**

@@ -1,5 +1,4 @@
 @extends('layout.template')
-@extends('component.pesan')
 
 @section('konten')
     
@@ -108,13 +107,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="" class="nav-link">
+                  <a href="{{ url('finished/incoming')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>In Coming</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../../index2.html" class="nav-link">
+                  <a href="{{ url('finished/outgoing') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Out Going</p>
                   </a>
@@ -146,7 +145,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a href="{{ url('child') }}" class="nav-link active">
+              <a href="" class="nav-link">
                 <i class="nav-icon fas fa-solid fa-box"></i>
                 <p>
                   Child Part & Komponen
@@ -155,13 +154,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="" class="nav-link">
+                  <a href="{{ url('child/incoming')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>In Coming</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../../index2.html" class="nav-link">
+                  <a href="{{ url('child/outgoing')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Out Going</p>
                   </a>
@@ -170,7 +169,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{ url('raw') }}" class="nav-link">
+              <a href="" class="nav-link active">
                 <i class="nav-icon fas fa-solid fa-box"></i>
                 <p>
                   Raw Material
@@ -179,13 +178,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="" class="nav-link">
+                  <a href="{{url('raw/incoming')}}" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
                     <p>In Coming</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../../index2.html" class="nav-link">
+                  <a href="{{url('raw/outgoing')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Out Going</p>
                   </a>
@@ -205,12 +204,11 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 fw-bold">Child Part & Komponen</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                <li class="breadcrumb-item active">Child Part & Komponen</li>
+                <li class="breadcrumb-item active">Raw Material</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -231,41 +229,41 @@
     </div>
 </div>
 @endif              
-        <a href="{{ url('child/create')}}" class="btn btn-success mt-5 mb-5 fw-bold">Tambah Data +</a>
         <table class="table table-light">
-  <thead>
-    <tr class="table-secondary">
-      <th scope="col">No</th>
-      <th scope="col">Nama Barang</th>
-      <th scope="col">Nama Supplier</th>
-      <th scope="col">Jumlah</th>
-      <th scope="col">Aksi</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php $i = $data->firstItem() ?>
-    @foreach ($data as $item)
-    <tr>
-      <th scope="row">{{ $i }}</th>
-      <td>{{ $item->nama_barang }}</td>
-      <td>{{ $item->nama_supplier }}</td>
-      <td>{{ $item->jumlah }}</td>
-      <td>
-        <a href="{{ url('child/'.$item->id.'/edit') }}" class="btn btn-warning ion-edit"></a>
-        <form class="d-inline" action="{{ url('child/'.$item->id) }}" method="post">
-          @csrf
-          @method('DELETE')
-            <button type="submit" name="submit" class="btn btn-danger ion-android-delete"></button>
-        </form>
-      </td>
-      <?php $i++ ?>
-    @endforeach
-    </tr>
-  </tbody>
-</table>
-{{ $data->links() }}
-        </div>
-      </section>
+            <h5 class="p-3 bg-dark text-white rounded">In Coming Raw Material</h5>
+
+            <thead>
+              <tr class="table-secondary">
+                <th scope="col">No</th>
+                <th scope="col">Nama Barang</th>
+                <th scope="col">Nama Supplier</th>
+                <th scope="col">Jumlah</th>
+                <th scope="col">Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php $i = $data->firstItem() ?>
+              @foreach ($data as $item)
+              <tr>
+                <th scope="row">{{ $i }}</th>
+                <td>{{ $item->nama_barang }}</td>
+                <td>{{ $item->nama_supplier }}</td>
+                <td>{{ $item->jumlah }}</td>
+                <td>
+                  <a href="{{ url('child/'.$item->id.'/edit') }}" class="btn btn-warning ion-edit"></a>
+                  <form class="d-inline" action="{{ url('child/'.$item->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                      <button type="submit" name="submit" class="btn btn-danger ion-android-delete"></button>
+                  </form>
+                </td>
+                <?php $i++ ?>
+              @endforeach
+              </tr>
+            </tbody>
+          </table>
+          {{ $data->links() }}
+                </section>
       
 
 

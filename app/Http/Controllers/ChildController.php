@@ -13,7 +13,13 @@ class ChildController extends Controller
     public function index()
     {
         $data = child::orderBy('id','desc')->paginate(10);
-        return view('child.child')->with('data', $data);
+        return view('child.incoming')->with('data', $data);
+    }
+
+    public function outgoing()
+    {
+        $data = child::orderBy('id','desc')->paginate(10);
+        return view('child.outgoing')->with('data', $data);
     }
 
     /**
