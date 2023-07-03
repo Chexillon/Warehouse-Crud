@@ -5,11 +5,6 @@ use App\Http\Controllers\FinishedController;
 use App\Http\Controllers\MasterdataController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RawController;
-<<<<<<< HEAD
-use App\Models\raw;
-=======
-use Illuminate\Support\Facades\Auth;
->>>>>>> b9cea9f3b17b9e23657ac06415f6bf9d31907ddd
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('/auth/login');
+    return view('/dashboard');
 });
 
 // Route::get('/finished', function(){
@@ -61,10 +56,3 @@ Route::get('/child/outgoing', [ChildController::class, 'outgoing']);
 Route::resource('masterdata', MasterdataController::class);
 
 
-
-<<<<<<< HEAD
-=======
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
->>>>>>> b9cea9f3b17b9e23657ac06415f6bf9d31907ddd
