@@ -205,7 +205,6 @@
   </tbody>
 </table>
 {{ $data->links() }}
-        </div>
       </section>
       
 

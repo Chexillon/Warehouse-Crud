@@ -26,13 +26,16 @@ Route::get('/', function () {
 //     return view('/admin/finished/finished');
 // });
 
-Route::get('/create', function(){
-    return view('/admin/create');
-});
+// Route::get('/create', function(){
+//     return view('/admin/create');
+// });
 
 
 // Routing page finished 
-Route::resource('finished', FinishedController::class);
+// Route::resource('/finished/incoming', FinishedController::class);
+Route::get('/finished/incoming', [FinishedController::class, 'index']);
+Route::get('/finished/outgoing', [FinishedController::class, 'outgoing']);
+
 
 
 // Routing page raw material
