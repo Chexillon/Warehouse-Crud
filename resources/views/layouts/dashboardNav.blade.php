@@ -56,41 +56,41 @@
                 </ul>
               </li>
 
-             <li class="nav-item">
-              <a href="{{ url('masterdata') }}" class="nav-link">
-                <i class="nav-icon fas fa-solid fa-box"></i>
-                <p>
-                  Barang Finished Good
-                </p>
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a href="{{ url('masterdata') }}" class="nav-link">
-                <i class="nav-icon fas fa-solid fa-box"></i>
-                <p>
-                  Barang WIP
-                </p>
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a href="{{ url('masterdata') }}" class="nav-link">
-                <i class="nav-icon fas fa-solid fa-box"></i>
-                <p>
-                  Child Part & Component
-                </p>
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a href="{{ url('masterdata') }}" class="nav-link">
-                <i class="nav-icon fas fa-solid fa-box"></i>
-                <p>
-                  Raw Material
-                </p>
-              </a>
-            </li>
+              <li class="nav-item">
+                <a href="{{ url('') }}" class="nav-link">
+                  <i class="nav-icon fas fa-boxes"></i>
+                  <p>
+                      Informasi Gudang
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Finished Good</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="../../index2.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>WIP</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="../../index2.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Child Part & Component</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="../../index2.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Raw Material</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
   
             <li class="nav-item">
               <a href="{{ url('') }}" class="nav-link">
@@ -114,7 +114,16 @@
                     </a>
                   </li>
                 </ul>
-              </li>
+
+                <li class="nav-item">
+                  <a href="{{ url('masterdata') }}" class="nav-link">
+                    <i class="nav-icon fas fa-solid fa-box"></i>
+                    <p>
+                      Kelola Akun
+                    </p>
+                  </a>
+                </li>
+              
              
       </nav>
       <!-- /.sidebar-menu -->
