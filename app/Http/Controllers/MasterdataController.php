@@ -57,6 +57,7 @@ class MasterdataController extends Controller
             // 'kategori' => $request->kategori,
             'tanggal' => $request->tanggal,
             'jumlah' => $request->jumlah,
+            
         ];
         finished::create($data);
         return redirect()->to('masterdata')->with('success', 'Berhasil menambahkan data');
