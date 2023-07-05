@@ -126,6 +126,31 @@
                   </li>
                 </ul>
               </li>
+
+              <li class="nav-item">
+                <a href="{{ url('raw') }}" class="nav-link">
+                  <i class="nav-icon fas fa-solid fa-box"></i>
+                  <p>
+                    Laporan
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Laporan In Coming</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../../index2.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Laporan Out Going</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
       </nav>
       <!-- /.sidebar-menu -->
     </div>
