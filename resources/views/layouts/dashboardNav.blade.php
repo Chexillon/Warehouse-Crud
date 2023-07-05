@@ -16,7 +16,7 @@
 
              <li class="nav-item">
                 <a href="{{ url('home') }}" class="nav-link">
-                  <i class="nav-icon fas fa-solid fa-box"></i>
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Dashboard
                   </p>
@@ -34,7 +34,7 @@
   
               <li class="nav-item">
                 <a href="{{ url('finished') }}" class="nav-link">
-                  <i class="nav-icon fas fa-solid fa-box"></i>
+                  <i class="nav-icon fas fa-solid fa-boxes"></i>
                   <p>
                     Barang Jadi
                     <i class="right fas fa-angle-left"></i>
