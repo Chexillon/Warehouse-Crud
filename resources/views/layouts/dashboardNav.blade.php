@@ -42,13 +42,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ url('/transaksi/barangmasuk') }}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Barang Masuk</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../../index2.html" class="nav-link">
+                    <a href="{{ url('/transaksi/barangkeluar') }}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Barang Keluar</p>
                     </a>
@@ -66,25 +66,25 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                      <a href="" class="nav-link">
+                      <a href="{{ url('/information/finished') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Finished Good</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="../../index2.html" class="nav-link">
+                      <a href="{{ url('/information/wip') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>WIP</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="../../index2.html" class="nav-link">
+                      <a href="{{ url('/information/child') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Child Part & Component</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="../../index2.html" class="nav-link">
+                      <a href="{{ url('/information/raw') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Raw Material</p>
                       </a>

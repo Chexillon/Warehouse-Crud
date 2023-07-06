@@ -37,17 +37,15 @@ active
                 <div class="inner">
                   <h3>150</h3>
 
-                  <p>Barang Jadi</p>
+                  <p>Barang Finished</p>
                 </div>
                 <div class="icon">
                   <i class=" ion ion-ios-box"></i>
                 </div>
-                <a href="{{ url('finished')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ url('/information/finished')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
-            <div class="icon">
-              <i class=" ion ion-ios-box"></i>
-            </div>
+    
             <!-- ./col -->
             <div class="col-lg-3 col-6">
               <!-- small box -->
@@ -60,7 +58,7 @@ active
                 <div class="icon">
                   <i class="ion ion-gear-b"></i>
                 </div>
-                <a href="{{ url('child') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right  "></i></a>
+                <a href="{{ url('/information/child')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right  "></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -75,59 +73,31 @@ active
                 <div class="icon">
                   <i class="ion ion-gear-a"></i>
                 </div>
-                <a href="{{ url('raw') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ url('/information/raw')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>53<sup style="font-size: 20px">%</sup></h3>
+    
+                  <p>Barang WIP</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-cube"></i>
+                </div>
+                <a href="{{ url('/information/wip')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-success">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-              <p>Barang Setengah Jadi</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-cube"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-warning text-white">
-            <div class="inner text-white">
-              <h3>44</h3>
-
-              <p>Child Part & Komponen</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-gear-b"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right  "></i></a>
-          </div>
-        </div>
+        
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-danger">
-            <div class="inner">
-              <h3>65</h3>
-
-              <p>Raw Material</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-gear-a"></i>
-            </div>
-            <a href="{{ url('raw') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
+      
       <!-- /.row -->
       <!-- Main row -->
 

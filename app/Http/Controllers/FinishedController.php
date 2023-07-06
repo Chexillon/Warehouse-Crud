@@ -14,7 +14,7 @@ class FinishedController extends Controller
     {
 
         $data = finished::orderBy('id','desc')->paginate(10);
-        return view('finished.incoming')->with('data', $data);
+        return view('TBarang.bmasuk')->with('data', $data);
 
         //
     }
