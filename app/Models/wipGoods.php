@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class raw extends Model
+class wipGoods extends Model
 {
     use HasFactory;
-    protected $fillable = ['id_master_categorie', 'no_surat_jalan', 'jumlah', 'tanggal'];
-    protected $table = 'raw';
+    protected $fillable = ['id_master_categorie', 'jumlah', 'tanggal_produksi'];
+    protected $table = 'wip_goods';
 }

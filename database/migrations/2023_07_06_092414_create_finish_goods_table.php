@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('raw', function (Blueprint $table) {
+        Schema::create('finish_goods', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_barang');
-            $table->string('nama_supplier');
-            $table->timestamps();
+            $table->unsignedBigInteger('id_master_categorie');
             $table->integer('jumlah');
+            $table->date('tanggal_produksi');
+            $table->timestamps();
 
+            $table->foreign('id_master_categorie')->references('id')->on('fg_wip_masters')->onDelete('cascade');
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('raw');
+        Schema::dropIfExists('finish_goods');
     }
 };
