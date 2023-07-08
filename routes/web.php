@@ -55,7 +55,11 @@ Route::get('/child/incoming', [ChildController::class, 'index']);
 Route::get('/child/outgoing', [ChildController::class, 'outgoing']);
 
 Route::get('/transaksi/barangmasuk/create', function () {
-    return view('TMcreate');
+    return view('transaksi.TMcreate');
+});
+
+Route::get('/transaksi/barangkeluar/create', function () {
+    return view('transaksi.TKcreate');
 });
 
 Route::get('/transaksi/barangmasuk', [BarangMasukController::class, 'index']);
