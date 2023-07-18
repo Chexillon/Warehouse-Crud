@@ -9,12 +9,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 fw-bold">Master Data</h1>
+              <h1 class="m-0 fw-bold">Finished Good</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                <li class="breadcrumb-item active">Master Data</li>
+                <li class="breadcrumb-item active">Finished Good</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -36,7 +36,7 @@
 </div>
 @endif              
         <table class="table table-light mb-5">
-         <h5 class="p-3 bg-dark text-white rounded">Barang Jadi</h5>
+         <h5 class="p-3 bg-dark text-white rounded">Finished Good</h5>
   <thead>
     <tr class="table-secondary">
       <th scope="col">No</th>
