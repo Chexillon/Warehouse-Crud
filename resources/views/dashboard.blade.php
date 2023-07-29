@@ -36,13 +36,26 @@ active
               <div class="small-box bg-info">
                 <div class="inner">
                   <h3>150</h3>
-
-                  <p>Barang Finished</p>
+                  <p>Finished Good</p>
                 </div>
                 <div class="icon">
                   <i class=" ion ion-ios-box"></i>
                 </div>
                 <a href="{{ url('/information/finished')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>53<sup style="font-size: 20px">%</sup></h3>
+                  <p>WIP</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-cube"></i>
+                </div>
+                <a href="{{ url('/information/wip')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
     
@@ -52,13 +65,12 @@ active
               <div class="small-box bg-warning text-white">
                 <div class="inner text-white">
                   <h3>44</h3>
-
                   <p>Child Part & Komponen</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-gear-b"></i>
                 </div>
-                <a href="{{ url('/information/child')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right  "></i></a>
+                <a href="{{ url('/information/child')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -76,20 +88,7 @@ active
                 <a href="{{ url('/information/raw')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box bg-success">
-                <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
-    
-                  <p>Barang WIP</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-cube"></i>
-                </div>
-                <a href="{{ url('/information/wip')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
+            
             <!-- ./col -->
           </div>
         </div>

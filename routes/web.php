@@ -8,6 +8,7 @@ use App\Http\Controllers\FinishedController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\MasterdataController;
 use App\Http\Controllers\RawController;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 
 Route::get('/', function () {
     return view('/auth/login');
@@ -80,3 +82,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('logout', 'Auth\LoginController@logout');
 
 
+Route::get('/akun', [InformationController::class, 'akun']);

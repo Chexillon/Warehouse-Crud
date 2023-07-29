@@ -33,6 +33,12 @@ class InformationController extends Controller
         return view('information.child')->with('data', $data);
     }
 
+    public function akun()
+    {
+        $data = finished::orderBy('id', 'desc')->paginate(10);
+        return view('akun.akun')->with('data', $data);
+    }
+
 
     /**
      * Show the form for creating a new resource.
