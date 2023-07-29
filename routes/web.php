@@ -83,3 +83,5 @@ Route::get('logout', 'Auth\LoginController@logout');
 
 
 Route::get('/akun', [InformationController::class, 'akun']);
+
+Route::get('/laporan/barangmasuk', [InformationController::class, 'masuk']);

@@ -39,6 +39,12 @@ class InformationController extends Controller
         return view('akun.akun')->with('data', $data);
     }
 
+    public function masuk()
+    {
+        $data = finished::orderBy('id', 'desc')->paginate(10);
+        return view('laporan.Bmasuk')->with('data', $data);
+    }
+
 
     /**
      * Show the form for creating a new resource.
