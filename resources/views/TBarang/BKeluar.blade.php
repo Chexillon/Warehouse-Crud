@@ -9,12 +9,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 fw-bold">Master Data</h1>
+              <h1 class="m-0 fw-bold">Barang Keluar</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                <li class="breadcrumb-item active">Master Data</li>
+                <li class="breadcrumb-item active">Barang Keluar</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -35,15 +35,21 @@
     </div>
 </div>
 @endif              
-        <a href="{{ url('masterdata/create')}}" class="btn btn-success mt-5 mb-5 fw-bold ion-android-add-circle"> Tambah Data</a>
+        <a href="{{ url('/transaksi/barangkeluar/create')}}" class="btn btn-success mt-5 mb-5 fw-bold ion-android-add-circle"> Tambah Data</a>
         <table class="table table-light mb-5">
-         <h5 class="p-3 bg-dark text-white rounded">Barang Jadi</h5>
+         <h5 class="p-3 bg-dark text-white rounded">Barang Finished</h5>
   <thead>
     <tr class="table-secondary">
       <th scope="col">No</th>
-      <th scope="col">Kode Barang</th>
+      <th scope="col">No Surat Jalan</th>
+      <th scope="col">No PO</th>
+      <th scope="col">Driver</th>
+      <th scope="col">No Polisi</th>
       <th scope="col">Nama Barang</th>
       <th scope="col">Nama Customer</th>
+      <th scope="col">Keterangan</th>
+      <th scope="col">Tanggal Produksi/QC</th>
+      <th scope="col">Jumlah</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
@@ -55,6 +61,12 @@
       <td>{{ $item->kode_barang }}</td>
       <td>{{ $item->nama_barang }}</td>
       <td>{{ $item->nama_customer }}</td>
+      <td>{{ $item->tanggal }}</td>
+      <td>{{ $item->jumlah }}</td>
+      <td>{{ $item->nama_barang }}</td>
+      <td>{{ $item->nama_customer }}</td>
+      <td>{{ $item->tanggal }}</td>
+      <td>{{ $item->jumlah }}</td>
       <td>
         <a href="{{ url('masterdata/'.$item->id.'/edit') }}" class="btn btn-warning ion-edit"></a>
         <form class="d-inline" action="{{ url('masterdata/'.$item->id) }}" method="post">
@@ -71,13 +83,16 @@
 {{ $data->links() }}
 
 <table class="table table-light mb-5">
-  <h5 class="p-3 bg-dark text-white rounded">Barang 1/2 Jadi</h5>
+  <h5 class="p-3 bg-dark text-white rounded">Barang WIP</h5>
 <thead>
 <tr class="table-secondary">
 <th scope="col">No</th>
-<th scope="col">Kode Barang</th>
 <th scope="col">Nama Barang</th>
 <th scope="col">Nama Customer</th>
+<th scope="col">Tanggal Produksi/QC</th>
+<th scope="col">OK</th>
+<th scope="col">Reject</th>
+<th scope="col">Jumlah</th>
 <th scope="col">Aksi</th>
 </tr>
 </thead>
@@ -89,6 +104,8 @@
 <td>{{ $item->kode_barang }}</td>
 <td>{{ $item->nama_barang }}</td>
 <td>{{ $item->nama_customer }}</td>
+<td>{{ $item->tanggal }}</td>
+<td>{{ $item->jumlah }}</td>
 <td>
  <a href="{{ url('masterdata/'.$item->id.'/edit') }}" class="btn btn-warning ion-edit"></a>
  <form class="d-inline" action="{{ url('masterdata/'.$item->id) }}" method="post">
@@ -109,9 +126,14 @@
   <thead>
     <tr class="table-secondary">
       <th scope="col">No</th>
+      <th scope="col">Jenis</th>
+      <th scope="col">Shift</th>
+      <th scope="col">Jam</th>
       <th scope="col">Nama Barang</th>
-      <th scope="col">Nama Supplier</th>
-      <th scope="col">Jenis Barang</th>
+      <th scope="col">Tanggal Produksi/QC</th>
+      <th scope="col">Keterangan</th>
+      <th scope="col">Jumlah</th>
+      <th scope="col">PIC</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
@@ -123,7 +145,12 @@
       <td>{{ $item->nama_barang }}</td>
       <td>{{ $item->nama_supplier }}</td>
       <td>{{ $item->jumlah }}</td>
-      <td>
+      <td>{{ $item->nama_barang }}</td>
+      <td>{{ $item->nama_supplier }}</td>
+      <td>{{ $item->jumlah }}</td>
+      <td>{{ $item->nama_supplier }}</td>
+      <td>{{ $item->jumlah }}</td>
+      <td>  
         <a href="{{ url('raw/'.$item->id.'/edit') }}" class="btn btn-warning ion-edit"></a>
         <form class="d-inline" action="{{ url('raw/'.$item->id) }}" method="post">
           @csrf
@@ -144,9 +171,14 @@
   <thead>
     <tr class="table-secondary">
       <th scope="col">No</th>
+      <th scope="col">Jenis</th>
+      <th scope="col">Shift</th>
+      <th scope="col">Jam</th>
       <th scope="col">Nama Barang</th>
-      <th scope="col">Nama Supplier</th>
-      <th scope="col">Jenis Barang</th>
+      <th scope="col">Tanggal Produksi/QC</th>
+      <th scope="col">Keterangan</th>
+      <th scope="col">Jumlah</th>
+      <th scope="col">PIC</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
@@ -158,7 +190,12 @@
       <td>{{ $item->nama_barang }}</td>
       <td>{{ $item->nama_supplier }}</td>
       <td>{{ $item->jumlah }}</td>
-      <td>
+      <td>{{ $item->nama_barang }}</td>
+      <td>{{ $item->nama_supplier }}</td>
+      <td>{{ $item->jumlah }}</td>
+      <td>{{ $item->nama_supplier }}</td>
+      <td>{{ $item->jumlah }}</td>
+      <td>      
         <a href="{{ url('raw/'.$item->id.'/edit') }}" class="btn btn-warning ion-edit"></a>
         <form class="d-inline" action="{{ url('raw/'.$item->id) }}" method="post">
           @csrf
@@ -177,7 +214,4 @@
 
 
   </section>
-</body>
-
-</html>
 @endsection

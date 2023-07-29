@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\BarangKeluarController;
+use App\Http\Controllers\BarangMasuk;
+use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\ChildController;
 use App\Http\Controllers\FinishedController;
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\MasterdataController;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\RawController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -51,7 +54,21 @@ Route::get('/raw/outgoing', [RawController::class, 'outgoing']);
 Route::get('/child/incoming', [ChildController::class, 'index']);
 Route::get('/child/outgoing', [ChildController::class, 'outgoing']);
 
+Route::get('/transaksi/barangmasuk/create', function () {
+    return view('transaksi.TMcreate');
+});
 
+Route::get('/transaksi/barangkeluar/create', function () {
+    return view('transaksi.TKcreate');
+});
+
+Route::get('/transaksi/barangmasuk', [BarangMasukController::class, 'index']);
+Route::get('/transaksi/barangkeluar', [BarangKeluarController::class, 'index']);
+
+Route::get('/information/finished', [InformationController::class, 'finished']);
+Route::get('/information/wip', [InformationController::class, 'wip']);
+Route::get('/information/child', [InformationController::class, 'child']);
+Route::get('/information/raw', [InformationController::class, 'raw']);
 
 
 Route::resource('masterdata', MasterdataController::class);
